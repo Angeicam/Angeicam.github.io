@@ -1,0 +1,37 @@
+<?php
+    $serveur = "localhost";
+    $dbname = "cours";
+    $user = "root";
+    $pass = "root";
+    
+    $Nom = $_POST["Nom"];
+    $NumerodeCarteBancaire = $_POST["Numero de Carte Bancaire"];
+    $Datedexpiration = $_POST["Date d expiration"];
+    $mail = $_POST["mail"];
+    $age = $_POST["age"];
+    $sexe = $_POST["sexe"];
+    
+    try{
+        //On se connecte à la BDD
+        $dbco = new PDO("mysql:host=$serveur;dbname=$dbname",$user,$pass);
+        $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+        //On insère les données reçues
+        $sth = $dbco->prepare("
+            INSERT INTO form(prenom, mail, age, sexe, pays)
+            VALUES(:prenom, :mail, :age, :sexe, :pays)");
+        $sth->bindParam(':Nom',$Nom);
+        $sth->bindParam(':Numero de Carte Bancaire',$NumerodeCarteBancaire);
+        $sth->bindParam(':Date d expiration',$Datedexpiration);
+        $sth->bindParam(':mail',$mail);
+        $sth->bindParam(':age',$age);
+        $sth->bindParam(':sexe',$sexe);
+        $sth->execute();
+        
+        //On renvoie l'utilisateur vers la page de remerciement
+        header("Page de remerciement");
+    }
+    catch(PDOException $e){
+        echo 'Impossible de traiter les données. Erreur : '.$e->getMessage();
+    }
+?>

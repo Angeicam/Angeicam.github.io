@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Ngela </title>
+<link rel="icon" href="https://selectra.info/sites/selectra.info/files/images/enedis-e-vert.jpg">
+</head>
+<html>
+   <head>
+      <title>Titre du document</title>
+      <style>
+      body {
+         background-image:url("cellule\ lithium\ unique.jpg");
+         background-repeat: no-repeat;
+		 background-size: 100%;
+		 background-attachment: fixed;
+         background-position: center;
+		 
+		 ;
+		}
+      </style>
+	 <body>
+	 <a href="Code1.html"><img src="Ngela_logo_propre800x800.png" alt="Ngela" width="90" height="90"></a>
+	<p>Ngela l'art d'innover</p>
+	
+	<style>
+	body
+{
+text-align:center;
+}
+.row {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+
+	<a href="Actualités" title="Actualité"><button><img src="baseus_amlight_powerbank_65w_30000mah_negro_07_ad_l.jpg" alt="image1" class="image" width="350" height="350"/><figcaption>Actualités</figcaption></button></a> <!-- Image à gauche -->
+	<a href="Commander" title="Commander"><button><img src="la-methode-bisou-les-5-questions-a-se-poser-avant-dacheter.jpg" alt="image2" class="image" width="350" height="350"/><figcaption>Achats</figcaption></button></a> <!-- Image au centre -->
+    <a href="Nous Connaitre" title="Nous Connaitre"><button><img src="connaitre-600x300.jpg" alt="image2" class="image" width="350" height="350"/><figcaption>Nous Connaitre</figcaption></button></a><!-- Image à droite -->
+
+<ul>
+  <li><a href="CCSS">Website</a></li>
+  <li><a href="mailto:m.bluth@example.com">Email</a></li>
+  <li><a href="tel:+123456789">Phone</a></li>
+</ul>
+<ul>
+  <li><a href="CCSS">Website </a></li>
+  <li><a href="mailto:m.bluth@example.com">Email</a></li>
+  <li><a href="tel:+123456789">Phone</a></li>
+</ul>
+
+
+</body>
+</html>

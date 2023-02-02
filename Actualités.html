@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Icam </title>
+<link rel="icon" href="640px-Logo_ICAM_-_2008.svg (1).png">
+</head>
+<body>
+<style type="text/css"> 
+	#barre_fixe
+	{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	border-bottom :6px solid black;
+	background: rgb(254, 254, 253);
+	border-color: red yellow rgba(255, 200, 2, 0.895) blue;
+			}
+	</style>
+	<title>Positionner une barre fixe</title>
+	</head>
+
+		<div id="barre_fixe">
+		<a href="Code1.html"><img src="barre-orizontale.png" style="float:left;" alt="Ngela" width="30" height="35"></a>
+		<a href="Code1.html"><img src="logo icam.png" style="float:left;" alt="Ngela" width="130" height="70"></a>
+        <br>       </br>
+		<img src="IMAGE VIDE.png" style="float:left;" alt="" width="400" height="50"></a>	
+		<a href="Code1.html"><img src="bouton acceuil.png" style="float:left;" alt="Ngela" width="120" height="50"></a>
+        <img src="IMAGE VIDE.png" style="float:left;" alt="" width="500" height="50"></a>
+		<a href="Formules.html"><img src="maison ernergie 3.png" style="float:left;" alt="Ngela" width="80" height="60"></a>
+		
+		
+	</div>
+    <br>       </br>
+    <br>       </br>
+    <br>       </br>
+    <p style="color:rgba(255, 140, 0, 0.797)";><FONT size="16pt"><b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;Mesures</b></FONT>
+
+
+    <?php
+        // Connexion à MySQL
+        $connection=mysqli_connect("localhost", "root", "", "tp_thermic");
+        
+        if (!$connection){ // Contrôler la connexion
+            $MessageConnexion = die ("connection impossible");
+        }
+        else {
+           $Amb_Int1=$_POST['Amb_Int1'];
+           $Paroi_Int=$_POST['Paroi_Int'];
+           $HR_Int=$_POST['HR_Int'];
+           $Amb_Int2=$_POST['Amb_Int2'];
+           $Amb_Ext1=$_POST['Amb_Ext1'];
+           $Paroi_Ext=$_POST['Paroi_Ext'];
+           $HR_Ext=$_POST['HR_Ext'];
+           $Amb_Ext2=$_POST['Amb_Ext2'];
+         
+           // Requête d'insertion
+           $AjouterDisque="INSERT INTO releve_temp  VALUES ('$Amb_Int1', '$Paroi_Int', '$HR_Int','$Amb_Int2','$Amb_Ext1', '$Paroi_Ext', '$HR_Ext','$Amb_Ext2')";
+        
+           // Exécution de la requête
+           mysqli_query($connection, $AjouterDisque) or die('Erreur SQL !'.$AjouterDisque.'<br>'.mysqli_error($connection));
+        }
+        
+        //header("C:\wamp64\www\siteolivier\PageProduits.html");
+        exit;
+        ?>
+        
+        
+        <p>If you click the "Submit" button, the form-data will be sent to a page called "/EnregNxClient.php".</p>
+   
+    </body>

@@ -1,0 +1,66 @@
+<!DOCTYPE SQL>
+<html>
+<head>
+<title> Icam </title>
+<link rel="icon" href="640px-Logo_ICAM_-_2008.svg (1).png">
+</head>
+<body>
+<style type="text/css"> 
+	#barre_fixe
+	{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	border-bottom :6px solid black;
+	background: rgb(254, 254, 253);
+	border-color: red yellow rgba(255, 200, 2, 0.895) blue;
+			}
+	</style>
+	<title>Positionner une barre fixe</title>
+	</head>
+
+		<div id="barre_fixe">
+		<a href="Code1.html"><img src="barre-orizontale.png" style="float:left;" alt="Ngela" width="30" height="35"></a>
+		<a href="Code1.html"><img src="logo icam.png" style="float:left;" alt="Ngela" width="130" height="70"></a>
+        <br>       </br>
+		<img src="IMAGE VIDE.png" style="float:left;" alt="" width="400" height="50"></a>	
+		<a href="Code1.html"><img src="bouton acceuil.png" style="float:left;" alt="Ngela" width="120" height="50"></a>
+        <img src="IMAGE VIDE.png" style="float:left;" alt="" width="500" height="50"></a>
+		<a href="Formules.html"><img src="maison ernergie 3.png" style="float:left;" alt="Ngela" width="80" height="60"></a>
+		
+		
+	</div>
+    <br>       </br>
+    <br>       </br>
+    <br>       </br>
+    <p style="color:rgba(255, 140, 0, 0.797)";><FONT size="16pt"><b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;Mesures</b></FONT>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "tp_thermic";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM releve_temp";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> Amb_Int1: ". $row["Amb_Int1"]. ",   Paroi_Int: ". $row["Paroi_Int"].", HR_Int: " . $row["HR_Int"] .", Amb_Int2: " . $row["Amb_Int2"] . ",Amb_Ext1: ". $row["Amb_Ext1"]. ",   Paroi_Ext: ". $row["Paroi_Ext"].", HR_Ext: " . $row["HR_Ext"] .", Amb_Ext2: " . $row["Amb_Ext2"] . "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>
+
+    </body>
