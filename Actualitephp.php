@@ -138,6 +138,7 @@ $password = "";
 $dbname = "tp_thermic";
 
 // Create connection
+	 {try
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
