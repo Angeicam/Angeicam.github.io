@@ -1,0 +1,10 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"tp_thermic"},
+{"type":"table","name":"releve_temp","database":"tp_thermic","data":
+[
+{"Amb_Int1":"37.2","Paroi_Int":"38.4","HR_Int":"65.5","Amb_Int2":"37.8","Amb_Ext1":"19.5","Paroi_Ext":"23.2","HR_Ext":"87.2","Amb_Ext2":"20.1"},
+{"Amb_Int1":"38.2","Paroi_Int":"39.3","HR_Int":"67.9","Amb_Int2":"39.3","Amb_Ext1":"20.5","Paroi_Ext":"24.2","HR_Ext":"90.2","Amb_Ext2":"21.1"}
+]
+}
+]
