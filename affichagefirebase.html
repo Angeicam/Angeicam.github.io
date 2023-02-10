@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Firebase Database Display</title>
+  </head>
+  <body>
+    <h1>Firebase Database Display</h1>
+    <table id="dataTable">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </table>
+    <!-- Add the Firebase libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+    <!-- Initialize Firebase -->
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBWVVdC0SqrneKUY0v9Eu3lOK2svD8HsQ8",
+  authDomain: "banctpthermique.firebaseapp.com",
+  databaseURL: "https://banctpthermique-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "banctpthermique",
+  storageBucket: "banctpthermique.appspot.com",
+  messagingSenderId: "421075401851",
+  appId: "1:421075401851:web:ef3022c786d36bb82376de",
+  measurementId: "G-N8M3ECW7RK"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // Get a reference to the database service
+      var database = firebase.database();
+      // Read data from the database and update the table
+      database.ref().on("value", function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          var key = childSnapshot.key;
+          var value = childSnapshot.val();
+          var table = document.getElementById("dataTable");
+          var row = table.insertRow(-1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          cell1.innerHTML = key;
+          cell2.innerHTML = value;
+        });
+      });
+    </script>
+  </body>
+</html>
